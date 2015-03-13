@@ -1,0 +1,39 @@
+titulo;EMPRESAS;;;;;;;;
+descricao;Esse modulo vai conter todas as empresas do sistema para poder ter estacionamento tem q ter uma empresa cadastrada e a empresa tambem var ter os funcionarios como contatos comerciais.;;;;;;;;
+anexos;img;;;;;;;;
+anexos;pdf;;;;;;;;
+anexos;txt;;;;;;;;
+dic;nome_tabela;nome da tabela vem aqui ;;;;;;;
+dic;comentario;Aqui vem o comenario aaaaaaaaaaaaaaaaaaaaaaaaaaaa;;;;;;;
+dic;tit_colunas;Chv;Campos;Tipos;Tamanho;Ob;Extra;Comen;VS
+dic;val_colunas;pk;emp_id;INT;11;S;;;V1
+dic;val_colunas;-;emp_n_fant;INT;11;S;;;V1
+dic;val_colunas;-;emp_rz_soci;INT;11;S;;;V1
+dic;val_colunas;-;emp_cnpj_cpf;;;;;;
+dic;val_colunas;-;emp_ie;;;;;;
+dic;val_colunas;-;emp_im;;;;;;
+dic;val_colunas;-;emp_site;;;;;;
+dic;val_colunas;;emp_email;;;;;;
+dic;val_colunas;-;emp_telefone;;;;;;
+dic;tit_models;nome;retorno;parametros;objetivo;;;;
+dic;val_models;nome;retorno;parametros;objetivo;;;;
+dic;fim;;;;;;;;
+;;;;;;;;;
+dic;nome_tabela;tb_usuarios;;;;;;;
+dic;comentario;Essa tabela ira manter as informaçoes de acesso de todos os ususarios.;;;;;;;
+dic;tit_colunas;Chv;Campos;Tipos;Tamanho;Ob;Extra;Comen;VS
+dic;val_colunas;pk;id;INT;11;S;-;;V1
+dic;val_colunas;-;id_empregado;INT;11;S;-;;V1
+dic;val_colunas;-;id_estacionamento;INT;11;S;-;;V1
+dic;val_colunas;-;id_evento;;;S;-;;V1
+dic;val_colunas;-;senha;;;S;-;;V1
+dic;val_colunas;-;permissoes;;;S;-;;V1
+dic;val_colunas;-;username;;;S;-;;V1
+dic;val_colunas;;data_cadastro;;;S;-;;V1
+dic;val_colunas;-;sincronizado;;;S;-;;V1
+dic;val_colunas;-;atualizado;;;S;-;;V1
+dic;val_colunas;-;status;;;S;-;;V1
+dic;val_colunas;-;ultima_atualizacao;;;S;-;;V1
+dic;tit_models;nome;retorno;parametros;objetivo;S;-;;V1
+dic;val_models;nome;retorno;parametros;objetivo;S;-;;V1
+dic;fim;;;;;;;;

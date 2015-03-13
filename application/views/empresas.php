@@ -1,28 +1,29 @@
 <?php 
-//Padroniza a Pagina
+/************************************************
+ * Padroniza a Pagina
+ ***********************************************/
 $acao = $this->uri->segment(2, 0);
 $id = $this->uri->segment(3, 0);
-
-
-//Monta menu
+/***********************************************
+ * Monta as variaveis vazias 
+ * que vao retornar alguma coisa
+ ***********************************************/
 $menu = '';
-
 $consulta = '';
-
-////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/***********************************************
+ * @return o html pronto
+ ***********************************************/
 $menu.='<div class="shortcuts span1">';
 foreach ($menu_lateral as $link => $valor) {
   $menu.=
     '<a href="'.$link.'" class="shortcut">'.$valor.'</a>';
 }
 $menu.='</div>';
-////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-////////////////////////////////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-
+/*************************************************
+* @param type $busca
+* @return type
+************************************************/
 function busc($busca){
   $r_busca = '';
   foreach ($busca['campos'] as $nome => $value) {   
@@ -50,9 +51,10 @@ function busc($busca){
     return '<tr><th class="td-actions info_quant" colspan="3">'.$r_busca.'</th></tr>';
 }
 
-////////////////////////////////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/*************************************************
+  * @param type $registros
+ * @return string
+ ************************************************/
 function registros($registros){
   $ret = '';
   $sing_plur = (count($registros) <=1 ? 'Foi encontrado ' . count($registros) . ' registro' : 'Foi encontrado ' . count($registros) . ' registros');
@@ -82,11 +84,12 @@ function registros($registros){
     return $ret;
 }
 
-////////////////////////////////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-
+/**
+ * 
+ * @param type $busca
+ * @param type $registros
+ * @return type
+ */
 function consultar($busca,$registros){
   return 
   '<table class="table table-striped table-bordered">
@@ -96,11 +99,22 @@ function consultar($busca,$registros){
   '</table>';
 
 }
-
-
-
+/**
+ * 
+ * @param type $formulario
+ * @return type
+ */
 function form($formulario){ 
     $form = '';
+    if(validation_errors()){
+        $form.= '
+            <div class="alert alert-danger">
+                <button type="button" class="close" data-dismiss="alert">&times;</button>
+                    '.validation_errors().'
+            </div>';
+    }
+    
+            
     $form.= form_open($formulario['dados_form']);
       $form.='
        <table class="table table-striped table-bordered">
@@ -108,7 +122,8 @@ function form($formulario){
          <tbody>
          <tr>
             <td>';
-        
+               
+
                foreach ($formulario['campos'] as $nome => $value) {
                 
                   
@@ -188,3 +203,4 @@ function form($formulario){
     </div>
     </div>
 </div>    
+
